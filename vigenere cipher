@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<string.h> 
+int main()
+{
+char str[27]={' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+char txt[50],dec[50],newk[50];
+char key[15];
+int val[15],n1,n2,j=0,k=0,i,x=0;
+printf("\nEnter plain text : ");
+scanf("%[^\n]",txt);
+printf("\nEnter the key : ");
+scanf("%s",key);
+n1=strlen(txt);
+n2= strlen(key);
+while(j<n2)
+{
+for(i=0;i<=27;i++)
+{
+if(key[j]==str[i])
+val[j]=i;
+}
+j++;
+}
+j=0;
+
+
+// plain text num in another array
+while(j<n1)
+{
+for(i=0;i<=27;i++)
+{
+if(txt[j]==str[i])
+dec[j]=i;
+}
+j++;
+}
+
+//new key values
+for(i=0,k=0;i<n1;i++,k++)
+{
+if(k==n2)
+k=0;
+newk[i]=val[k];
+}
+for(i=0;i<n1;i++)
+{
+if(txt[i]==' ')
+    dec[i]=0;
+else
+    dec[i] += newk[i];
+}
+printf("\n");
+for(i=0;i<n1;i++)
+{
+    x = dec[i];
+    if(x > 27)
+    {
+        x = x%27;
+        dec[i] = x;
+    }
+     x = dec[i];
+printf("%c",str[x]);
+}
+return 0;
+} 

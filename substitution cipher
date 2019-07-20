@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    int i,j=0,c=0,k;
+    char a[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    char b[26]={'z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h','g','f','e','d','c','b','a'};
+    char ch[10];
+    printf("\nEnter a string : ");
+    scanf("%s",ch);
+    k = strlen(ch);
+    while(c<k)
+    {
+        for(i=0;i<26;i++)
+        {
+            if(ch[j]==a[i])
+            break;
+           
+        }
+        printf("%c",b[j]);
+        
+        j++;
+        c++;
+    }
+}
+
